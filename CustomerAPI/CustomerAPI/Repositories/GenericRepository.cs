@@ -6,12 +6,11 @@ namespace CustomerAPI.Repositories
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
 
-        private CustomerContext _customerContext;
-        private DbSet<T> _dbSet;
+        private readonly CustomerContext _customerContext;
+        private readonly DbSet<T> _dbSet;
 
         //Depenedncy Injection
         public GenericRepository(CustomerContext customerContext){
-
             _customerContext = customerContext;
             _dbSet = _customerContext.Set<T>();
 
