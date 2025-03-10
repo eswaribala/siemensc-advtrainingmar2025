@@ -15,7 +15,7 @@ namespace CustomerAPI.Contexts
         public DbSet<Individual> Individuals { get; set; }
         public DbSet<Corporate> Corporates { get; set; }
         public DbSet<Address> Addresses { get; set; }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -27,5 +27,6 @@ namespace CustomerAPI.Contexts
                 .Property(C => C.CompanyType).HasConversion<string>()
                 .HasMaxLength(50);
         }
+        
     }
 }

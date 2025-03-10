@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CustomerAPI.Models
@@ -9,6 +10,7 @@ namespace CustomerAPI.Models
     {
         [Column("Gender")]
         [EnumDataType(typeof(Gender))]
+        //[ConvertTo(typeof(EnumToStringConverter<Gender>))]
         public Gender Gender { get; set; }
         [Column("DOB")]
         [DataType(DataType.Date)]
