@@ -4,7 +4,7 @@
     {
         Task<T> AddEntity(T Entity); //create
         Task<IEnumerable<T>> GetAllValues(); //retrieve
-        bool DeleteEntity(long Key); //delete
+        Task<bool> DeleteEntity(long Key); //delete
         Task<T> UpdateEntity(T Entity); //update
         Task<T> GetEntityById(long Key);
     }

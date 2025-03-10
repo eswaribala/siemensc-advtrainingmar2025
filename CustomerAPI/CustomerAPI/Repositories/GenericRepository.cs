@@ -16,7 +16,7 @@ namespace CustomerAPI.Repositories
 
             }
 
-        
+        //insert query
         public async Task<T> AddEntity(T Entity)
         {
             //saved the object to table
@@ -26,27 +26,37 @@ namespace CustomerAPI.Repositories
             return result.Entity;
 
         }
-
-        public bool DeleteEntity(long Key)
+        //delete query
+        public async Task<bool> DeleteEntity(long Key)
         {
-            throw new NotImplementedException();
+            bool status = false;
+            var entity= await _dbSet.FindAsync(Key);
+            if (entity != null)
+            {
+                _customerContext.Remove(entity);
+                await _customerContext.SaveChangesAsync();
+                status = true;
+            }
+            return status;
         }
 
+        //select all
         public Task<IEnumerable<T>> GetAllValues()
         {
             throw new NotImplementedException();
         }
 
+        //select where ?
         public Task<T> GetEntityById(long Key)
         {
             throw new NotImplementedException();
         }
 
+        //update table
         public Task<T> UpdateEntity(T Entity)
         {
             throw new NotImplementedException();
         }
     }
-    {
-    }
+ 
 }
