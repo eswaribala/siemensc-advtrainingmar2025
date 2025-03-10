@@ -33,7 +33,7 @@ namespace CustomerAPI.Repositories
             var entity= await _dbSet.FindAsync(Key);
             if (entity != null)
             {
-                _customerContext.Remove(entity);
+                _dbSet.Remove(entity);
                 await _customerContext.SaveChangesAsync();
                 status = true;
             }
