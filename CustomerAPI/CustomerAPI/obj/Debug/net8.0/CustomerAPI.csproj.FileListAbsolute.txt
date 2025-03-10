@@ -27,7 +27,6 @@ D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\obj\Debug\net8.0\sta
 D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CustomerAPI.props
 D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CustomerAPI.props
 D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\obj\Debug\net8.0\staticwebassets.pack.json
-D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\obj\Debug\net8.0\Customer.2AC01E46.Up2Date
 D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\obj\Debug\net8.0\CustomerAPI.dll
 D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\obj\Debug\net8.0\refint\CustomerAPI.dll
