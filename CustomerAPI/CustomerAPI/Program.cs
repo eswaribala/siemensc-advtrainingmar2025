@@ -1,4 +1,13 @@
+using CustomerAPI.Contexts;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+ConfigurationManager configuration = builder.Configuration;
+
+//DbConfiguration
+builder.Services.AddDbContext<CustomerContext>(o =>
+o.UseSqlServer(configuration.GetConnectionString("CustomerDBConn")));
+
 
 // Add services to the container.
 
