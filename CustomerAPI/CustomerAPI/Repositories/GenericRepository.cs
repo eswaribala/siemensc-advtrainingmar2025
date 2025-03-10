@@ -1,10 +1,31 @@
-﻿namespace CustomerAPI.Repositories
+﻿using CustomerAPI.Contexts;
+using Microsoft.EntityFrameworkCore;
+
+namespace CustomerAPI.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        public Task<T> AddEntity(T Entity)
+
+        private CustomerContext _customerContext;
+        private DbSet<T> _dbSet;
+
+        //Depenedncy Injection
+        public GenericRepository(CustomerContext customerContext){
+
+            _customerContext = customerContext;
+            _dbSet = _customerContext.Set<T>();
+
+            }
+
+        
+        public async Task<T> AddEntity(T Entity)
         {
-            throw new NotImplementedException();
+            //saved the object to table
+           var result= await _dbSet.AddAsync(Entity);
+            //saved changes in the table
+            await _customerContext.SaveChangesAsync();
+            return result.Entity;
+
         }
 
         public bool DeleteEntity(long Key)

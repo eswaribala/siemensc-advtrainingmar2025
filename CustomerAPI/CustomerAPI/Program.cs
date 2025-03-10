@@ -1,4 +1,5 @@
 using CustomerAPI.Contexts;
+using CustomerAPI.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,8 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddDbContext<CustomerContext>(o =>
 o.UseSqlServer(configuration.GetConnectionString("CustomerDBConn")));
 
+//register repository
+builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 // Add services to the container.
 
