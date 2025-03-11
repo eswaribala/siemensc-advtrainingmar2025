@@ -45,8 +45,8 @@ namespace CustomerAPI.Controllers
         [HttpPut("{Key}")]
         public async Task<IActionResult> Update(long Key, [FromBody] T entity)
         {
-            var entityId = entity.GetType().GetProperty("Key")?.GetValue(entity);
-            if (entityId == null || (int)entityId != Key)
+            var entityId = entity.GetType().GetProperty("AccountNo")?.GetValue(entity);
+            if (entityId == null || (long)entityId != Key)
             {
                 return BadRequest("ID mismatch");
             }
