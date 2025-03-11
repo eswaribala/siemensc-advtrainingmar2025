@@ -170,3 +170,6 @@ D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\bin\Debug\net8.0\run
 D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\obj\Debug\net8.0\CustomerAPI.sourcelink.json
+D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+D:\SiemensAdvanceDotTrainingMar2025\CustomerAPI\CustomerAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

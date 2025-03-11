@@ -41,21 +41,25 @@ namespace CustomerAPI.Repositories
         }
 
         //select all
-        public Task<IEnumerable<T>> GetAllValues()
+        public async Task<IEnumerable<T>> GetAllValues()
         {
-            throw new NotImplementedException();
+            return await _dbSet.ToListAsync();
+
         }
 
         //select where ?
-        public Task<T> GetEntityById(long Key)
+        public async Task<T> GetEntityById(long Key)
         {
-            throw new NotImplementedException();
+            return await _dbSet.FindAsync(Key);
+
         }
 
         //update table
-        public Task<T> UpdateEntity(T Entity)
+        public async Task<T> UpdateEntity(T Entity)
         {
-            throw new NotImplementedException();
+           var result= _dbSet.Update(Entity);
+            await _customerContext.SaveChangesAsync();
+            return result.Entity;
         }
     }
  
