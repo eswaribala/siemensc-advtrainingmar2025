@@ -1,0 +1,3 @@
+#build the image
+  #go to solution folder
+  docker build -f CustomerAPI/Dockerfile -t customerapi .
