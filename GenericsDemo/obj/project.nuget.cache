@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UFo49PQHNkw=",
+  "dgSpecHash": "qjcaaRln8wQ=",
   "success": true,
   "projectFilePath": "D:\\SiemensAdvanceDotTrainingMar2025\\GenericsDemo\\GenericsDemo.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\param\\.nuget\\packages\\faker.net\\2.0.163\\faker.net.2.0.163.nupkg.sha512",
+    "C:\\Users\\param\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\param\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

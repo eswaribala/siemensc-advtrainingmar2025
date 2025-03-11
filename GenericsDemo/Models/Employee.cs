@@ -14,6 +14,11 @@ namespace GenericsDemo.Models
         public string EmployeeDepartment { get; set; }
         public string EmployeeDesignation { get; set; }
         public double EmployeeSalary { get; set; }
-        public string EmployeeLocation { get; set; }    
+        public string EmployeeLocation { get; set; }
+
+        public override string ToString()
+        {
+            return EmployeeId + " " + EmployeeName + " " + EmployeeDepartment + " " + EmployeeDesignation + " " + EmployeeSalary + " " + EmployeeLocation;
+        }
     }
 }
