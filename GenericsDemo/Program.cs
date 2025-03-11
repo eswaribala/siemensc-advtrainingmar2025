@@ -21,4 +21,9 @@ for(int i = 0; i < 10; i++)
 GenericRepository<Employee> repository = new GenericRepository<Employee>();
 repository.GetValues(employees);
 
+
+PrivilegedMemberBuilder privilegedMemberBuilder = new PrivilegedMemberBuilder();
+//chain of operations
+privilegedMemberBuilder.SetName(Faker.Name.FullName()).SetRole("Admin").Show();
+
 Console.ReadKey();

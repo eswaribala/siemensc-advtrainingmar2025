@@ -11,6 +11,7 @@ namespace GenericsDemo.Repository
 
         public void GetValues(List<T> items)
         {
+            // chain of operations
             items.ToList().ForEach(item => 
             Console.WriteLine(item));
 
