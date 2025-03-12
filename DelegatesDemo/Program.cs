@@ -43,6 +43,7 @@ GenericDelegatesProcessor.ProcessGenericDelegate(transactions, account);
 
 EventProcessor.ProcessTransactionEvent(transaction1);
 
+SimpleEvent.ProcessEvent(9999);
 Console.ReadKey();
 
 
