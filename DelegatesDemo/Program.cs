@@ -41,6 +41,8 @@ DelegatePluginProcessor.ProcessDelegatePlugin(transactions, account);
 
 GenericDelegatesProcessor.ProcessGenericDelegate(transactions, account);
 
+EventProcessor.ProcessTransactionEvent(transaction1);
+
 Console.ReadKey();
 
 
