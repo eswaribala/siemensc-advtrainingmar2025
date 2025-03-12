@@ -1,4 +1,5 @@
 ﻿using Confluent.Kafka;
+using Confluent.Kafka.Admin;
 using OrderAPIV1.Models;
 using System.Diagnostics;
 using System.Net;
@@ -11,6 +12,26 @@ namespace OrderAPIV1.Services
         public async Task<string> PublishOrder(Order order, IConfiguration configuration)
         {
             string TopicName = configuration["TopicName"];
+            var adminConfig = new AdminClientConfig
+            {
+                BootstrapServers = configuration["BootStrapServer"],
+                ClientId = Dns.GetHostName()
+            };
+            using var adminClient = new AdminClientBuilder(adminConfig).Build();
+            var topicSpecification = new TopicSpecification
+            {
+                Name = TopicName,
+                NumPartitions = 1,
+                ReplicationFactor = 1
+            };
+            try
+            {
+                await adminClient.CreateTopicsAsync(new List<TopicSpecification> { topicSpecification });
+            }
+            catch (CreateTopicsException e)
+            {
+                Debug.WriteLine($"An error occured creating the topic: {e.Results[0].Error.Reason}");
+            }
             ProducerConfig producerConfig = new ProducerConfig
             {
                 BootstrapServers = configuration["BootStrapServer"],
