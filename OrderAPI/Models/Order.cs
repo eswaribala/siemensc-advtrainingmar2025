@@ -14,6 +14,6 @@
         public string OrderDescription { get; set; }
         public OrderStatus OrderStatus { get; set; }
         public DateTime OrderDate { get; set; }        
-        public string OrderAmount { get; set; }
+        public long OrderAmount { get; set; }
     }
 }
