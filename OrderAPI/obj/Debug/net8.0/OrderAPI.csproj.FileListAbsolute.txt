@@ -59,3 +59,4 @@ D:\SiemensAdvanceDotTrainingMar2025\OrderAPI\obj\Debug\net8.0\refint\OrderAPI.dl
 D:\SiemensAdvanceDotTrainingMar2025\OrderAPI\obj\Debug\net8.0\OrderAPI.pdb
 D:\SiemensAdvanceDotTrainingMar2025\OrderAPI\obj\Debug\net8.0\OrderAPI.genruntimeconfig.cache
 D:\SiemensAdvanceDotTrainingMar2025\OrderAPI\obj\Debug\net8.0\ref\OrderAPI.dll
+D:\SiemensAdvanceDotTrainingMar2025\OrderAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
