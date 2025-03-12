@@ -1,5 +1,9 @@
+using OrderAPI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddScoped<IOrderService, OrderSevice>();
 // Add services to the container.
 
 builder.Services.AddControllers();
