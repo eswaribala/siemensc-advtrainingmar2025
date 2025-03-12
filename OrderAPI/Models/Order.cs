@@ -13,7 +13,7 @@
         public string OrderName { get; set; }
         public string OrderDescription { get; set; }
         public OrderStatus OrderStatus { get; set; }
-        public string OrderDate { get; set; }        
+        public DateTime OrderDate { get; set; }        
         public string OrderAmount { get; set; }
     }
 }
