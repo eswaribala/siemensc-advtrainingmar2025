@@ -38,6 +38,9 @@ for (int i = 0;i<10; i++)
 
 DelegatePluginProcessor.ProcessDelegatePlugin(transactions, account);
 
+
+GenericDelegatesProcessor.ProcessGenericDelegate(transactions, account);
+
 Console.ReadKey();
 
 
