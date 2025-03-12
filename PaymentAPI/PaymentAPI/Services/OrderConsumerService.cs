@@ -12,12 +12,12 @@ namespace PaymentAPI.Services
             _configuration = configuration;
         }
 
-        protected override async  Task ExecuteAsync(CancellationToken stoppingToken)
+        protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var groupId = this._configuration["GroupId"];
             var topicName = this._configuration["TopicName"];
             var bootstrapServer = this._configuration["BootStrapServer"];
-            GetOrderData(groupId, topicName, bootstrapServer);
+            return GetOrderData(groupId, topicName, bootstrapServer);
         }
 
 
@@ -59,7 +59,7 @@ namespace PaymentAPI.Services
                             var cr = c.Consume(cts.Token);
                             Console.WriteLine($"Consumed message '{cr.Message}' at: '{cr.TopicPartitionOffset}'.");
                             response = $"Consumed message '{cr.Message}' at: '{cr.TopicPartitionOffset}'.";
-                          
+
                         }
                         catch (ConsumeException e)
                         {
@@ -76,4 +76,5 @@ namespace PaymentAPI.Services
                 return response;
             }
         }
+    }
 }
