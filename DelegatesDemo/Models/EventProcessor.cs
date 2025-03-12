@@ -9,7 +9,7 @@ namespace DelegatesDemo.Models
     public delegate void TransactionEventHandler(Transaction transaction);
     public class EventProcessor
     {
-
+        //wrapper for delegate
         public event TransactionEventHandler OnTransactionCompleted;
 
 
