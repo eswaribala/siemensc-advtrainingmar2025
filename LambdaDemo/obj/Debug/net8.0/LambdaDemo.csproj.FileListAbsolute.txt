@@ -13,3 +13,7 @@ D:\SiemensAdvanceDotTrainingMar2025\LambdaDemo\obj\Debug\net8.0\refint\LambdaDem
 D:\SiemensAdvanceDotTrainingMar2025\LambdaDemo\obj\Debug\net8.0\LambdaDemo.pdb
 D:\SiemensAdvanceDotTrainingMar2025\LambdaDemo\obj\Debug\net8.0\LambdaDemo.genruntimeconfig.cache
 D:\SiemensAdvanceDotTrainingMar2025\LambdaDemo\obj\Debug\net8.0\ref\LambdaDemo.dll
+D:\SiemensAdvanceDotTrainingMar2025\LambdaDemo\bin\Debug\net8.0\Faker.Net.6.0.dll
+D:\SiemensAdvanceDotTrainingMar2025\LambdaDemo\bin\Debug\net8.0\de-DE\Faker.Net.6.0.resources.dll
+D:\SiemensAdvanceDotTrainingMar2025\LambdaDemo\obj\Debug\net8.0\LambdaDemo.csproj.AssemblyReference.cache
+D:\SiemensAdvanceDotTrainingMar2025\LambdaDemo\obj\Debug\net8.0\LambdaDemo.csproj.Up2Date

@@ -19,6 +19,9 @@ namespace LambdaDemo.Models
 
         public IEnumerable<Address> AddressList { get; set;}
 
-
+        public override string ToString()
+        {
+            return "AccountNo: " + AccountNo + " Name: " + Name + " Email: " + Email + " PhoneNumber: " + PhoneNumber + " AddressList: " + AddressList;
+        }
     }
 }
