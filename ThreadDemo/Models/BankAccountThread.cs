@@ -21,8 +21,8 @@ namespace ThreadDemo.Models
             { Name = "Customer 2" };
             thread1.Start();
             thread2.Start();
-            thread1.Join();
-            thread2.Join();
+            //thread1.Join();
+           // thread2.Join();
             Console.WriteLine($"Final Balance: {account.GetBalance()}");
         }
     }

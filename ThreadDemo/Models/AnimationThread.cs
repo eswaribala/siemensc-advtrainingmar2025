@@ -29,7 +29,7 @@ namespace ThreadDemo.Models
             name.ToString().ToCharArray().ToList().ForEach(c =>
             {
                 Console.Write(c);
-                Thread.Sleep(2000);
+                Thread.Sleep(500);
             });
         }
     }
