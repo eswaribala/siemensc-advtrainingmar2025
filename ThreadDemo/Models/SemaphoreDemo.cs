@@ -8,7 +8,7 @@ namespace ThreadDemo.Models
 {
     public class SemaphoreDemo
     {
-        public static Semaphore semaphore = new Semaphore(2, 2);
+        public static Semaphore semaphore = new Semaphore(4, 4);
         public static void UseFlapDoor(object employee)
         {
             Console.WriteLine(employee + " is waiting to use the flap door");
@@ -22,7 +22,7 @@ namespace ThreadDemo.Models
             finally
             {
                 semaphore.Release();
-                Console.WriteLine(employee + " has left the flap door");
+                //Console.WriteLine(employee + " has left the flap door");
             }
         }
     }

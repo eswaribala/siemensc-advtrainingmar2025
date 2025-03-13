@@ -3,7 +3,16 @@ using ThreadDemo.Models;
 
 //AnimationThread.ThreadStart();
 //BankAccountThread.BankThreadStart();
-for(int i = 0; i < 50; i++)
+Thread[] threads = new Thread[10];
+for (int i = 0; i < 10; i++)
 {
-    new Thread(() => SemaphoreDemo.UseFlapDoor("Employee " + i)).Start();
+   threads[i]= new Thread(() => SemaphoreDemo.UseFlapDoor("Employee " + i));
+    if (i % 2 == 0)
+
+        threads[i].Priority = ThreadPriority.Highest;
+    else
+        threads[i].Priority = ThreadPriority.Lowest;
+    threads[i].Start();
+    //threads[i].Join();
+
 }
