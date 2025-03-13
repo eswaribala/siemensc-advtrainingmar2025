@@ -3,16 +3,18 @@ using ThreadDemo.Models;
 
 //AnimationThread.ThreadStart();
 //BankAccountThread.BankThreadStart();
-Thread[] threads = new Thread[10];
-for (int i = 0; i < 10; i++)
-{
-   threads[i]= new Thread(() => SemaphoreDemo.UseFlapDoor("Employee " + i));
-    if (i % 2 == 0)
+//Thread[] threads = new Thread[50];
+//for (int i = 0; i < 50; i++)
+//{
+//   threads[i]= new Thread(() => SemaphoreDemo.UseFlapDoor("Employee " + i));
+//    if (i % 2 == 0)
 
-        threads[i].Priority = ThreadPriority.Highest;
-    else
-        threads[i].Priority = ThreadPriority.Lowest;
-    threads[i].Start();
-    //threads[i].Join();
+//        threads[i].Priority = ThreadPriority.Highest;
+//    else
+//        threads[i].Priority = ThreadPriority.Lowest;
+//    threads[i].Start();
+//    //threads[i].Join();
 
-}
+//}
+
+LocalStateDemo.Run();
