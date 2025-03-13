@@ -16,7 +16,10 @@ namespace LoginApp
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Thread thread = new Thread(new ParameterizedThreadStart(ValidateLoginData));
-            thread.Start();
+            User user = new User();
+            user.Username = txtUserName.Text;
+            user.Password = txtPassword.Text;
+            thread.Start(user);
         }
 
         public void ValidateLoginData(object userObject)

@@ -5,3 +5,13 @@ D:\SiemensAdvanceDotTrainingMar2025\LoginApp\obj\Debug\net8.0-windows\LoginApp.A
 D:\SiemensAdvanceDotTrainingMar2025\LoginApp\obj\Debug\net8.0-windows\LoginApp.AssemblyInfo.cs
 D:\SiemensAdvanceDotTrainingMar2025\LoginApp\obj\Debug\net8.0-windows\LoginApp.csproj.CoreCompileInputs.cache
 D:\SiemensAdvanceDotTrainingMar2025\LoginApp\obj\Debug\net8.0-windows\LoginApp.sourcelink.json
+D:\SiemensAdvanceDotTrainingMar2025\LoginApp\bin\Debug\net8.0-windows\LoginApp.exe
+D:\SiemensAdvanceDotTrainingMar2025\LoginApp\bin\Debug\net8.0-windows\LoginApp.deps.json
+D:\SiemensAdvanceDotTrainingMar2025\LoginApp\bin\Debug\net8.0-windows\LoginApp.runtimeconfig.json
+D:\SiemensAdvanceDotTrainingMar2025\LoginApp\bin\Debug\net8.0-windows\LoginApp.dll
+D:\SiemensAdvanceDotTrainingMar2025\LoginApp\bin\Debug\net8.0-windows\LoginApp.pdb
+D:\SiemensAdvanceDotTrainingMar2025\LoginApp\obj\Debug\net8.0-windows\LoginApp.dll
+D:\SiemensAdvanceDotTrainingMar2025\LoginApp\obj\Debug\net8.0-windows\refint\LoginApp.dll
+D:\SiemensAdvanceDotTrainingMar2025\LoginApp\obj\Debug\net8.0-windows\LoginApp.pdb
+D:\SiemensAdvanceDotTrainingMar2025\LoginApp\obj\Debug\net8.0-windows\LoginApp.genruntimeconfig.cache
+D:\SiemensAdvanceDotTrainingMar2025\LoginApp\obj\Debug\net8.0-windows\ref\LoginApp.dll
