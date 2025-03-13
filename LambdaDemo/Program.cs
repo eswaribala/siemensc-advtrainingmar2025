@@ -61,8 +61,15 @@ users.Add("Jyoti Tyagi");
 users.OrderBy(u => u.Split().Last()).ToList().ForEach(Console.WriteLine);
 
 
+//progressive sub query
+IEnumerable<string> derivedNames = names.OrderBy(n => n.Length);
+derivedNames.Select(n => n.Length).ToList().ForEach(Console.WriteLine);
 
 
-
+(from n in names
+ where n.Length ==
+ (from n1 in names orderby n1.Length select n1.Length).First()
+ select n)
+ .ToList().ForEach(Console.WriteLine);
 
 
