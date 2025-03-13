@@ -17,12 +17,12 @@ namespace ThreadDemo.Models
             Withdraw(new Random().Next(5000, 8000)))
             { Name = "Customer 1" };
             Thread thread2 = new Thread(() => account.
-            Withdraw(new Random().Next(5000, 8000)))
+            Withdraw(new Random().Next(5000, 10000)))
             { Name = "Customer 2" };
             thread1.Start();
             thread2.Start();
-            //thread1.Join();
-           // thread2.Join();
+            thread1.Join();
+            thread2.Join();
             Console.WriteLine($"Final Balance: {account.GetBalance()}");
         }
     }
