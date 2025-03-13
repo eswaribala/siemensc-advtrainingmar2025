@@ -17,4 +17,6 @@ using ThreadDemo.Models;
 
 //}
 
-LocalStateDemo.Run();
+//LocalStateDemo.Run();
+
+ManualResetEventDemo.ControlDoor();
