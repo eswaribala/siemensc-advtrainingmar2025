@@ -21,14 +21,15 @@ namespace ThreadDemo.Models
                 customerId = new Random().Next(1000, 10000);
                 amount = new Random().Next(1000, 5000);
                 tasks[i] = WithdrawMoneyAsync(customerId, amount);
-                Task receiptTask= tasks[i].ContinueWith(t =>
+                //sub task for receipt and history
+                Task receiptTask = tasks[i].ContinueWith(previousTask =>
                 {
-                    decimal balance = t.Result;
+                    decimal balance = previousTask.Result;
                     GenerateReceipt(customerId, 1000, balance);
                 });
-                Task historyTask = tasks[i].ContinueWith(t =>
+                Task historyTask = tasks[i].ContinueWith(previousTask =>
                 {
-                    decimal balance = t.Result;
+                    decimal balance = previousTask.Result;
                     UpdateHistory(customerId, 1000, balance);
                 });
             }
