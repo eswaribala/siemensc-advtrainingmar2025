@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using LambdaDemo.Models;
 using LambdaDemo.Repositories;
+using System.Runtime.Intrinsics.Arm;
 IRepository<Customer> customerRepository = new Repository<Customer>();
 
 Func<Individual, Customer> addIndividual = (obj) =>
@@ -65,11 +66,7 @@ users.OrderBy(u => u.Split().Last()).ToList().ForEach(Console.WriteLine);
 IEnumerable<string> derivedNames = names.OrderBy(n => n.Length);
 derivedNames.Select(n => n.Length).ToList().ForEach(Console.WriteLine);
 
-
 (from n in names
  where n.Length ==
  (from n1 in names orderby n1.Length select n1.Length).First()
- select n)
- .ToList().ForEach(Console.WriteLine);
-
-
+ select n).ToList().ForEach(Console.WriteLine);
