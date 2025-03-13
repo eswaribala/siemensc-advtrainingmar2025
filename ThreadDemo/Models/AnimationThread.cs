@@ -18,7 +18,8 @@ namespace ThreadDemo.Models
             }
             Console.WriteLine($"Thread Name={Thread.CurrentThread.Name}");
             Thread thread = new Thread(new ParameterizedThreadStart(AnimateName));
-            thread.Start("Parameswari");                      
+            thread.Start("Parameswari");     
+            thread.Join();
         }
 
         public static void AnimateName(object name)

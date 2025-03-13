@@ -2,3 +2,4 @@
 using ThreadDemo.Models;
 
 AnimationThread.ThreadStart();
+BankAccountThread.BankThreadStart();
