@@ -2,17 +2,24 @@ namespace LoginApp
 {
     public partial class LoginForm : Form
     {
+       // private SynchronizationContext synchronizationContext;
+        
+
         public LoginForm()
         {
             InitializeComponent();
+           // synchronizationContext = SynchronizationContext.Current;
+
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Thread thread = new Thread(new ParameterizedThreadStart(LoginValidator.ValidateLoginData));
+            Thread thread = new Thread(new ParameterizedThreadStart(ValidateLoginData));
+            thread.Start();
         }
 
-        public static void ValidateLoginData(object userObject)
+        public void ValidateLoginData(object userObject)
         {
             User user = (User)userObject;
             if (user.Username == "admin" && user.Password == "admin")
