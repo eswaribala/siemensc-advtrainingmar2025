@@ -14,10 +14,23 @@ namespace ThreadDemo.Models
         public async Task Entry()
         {
             Task<decimal>[] tasks = new Task<decimal>[3];
-            for(int i = 0; i < tasks.Length; i++)
+            long customerId = 0;
+            decimal amount = 0;
+            for (int i = 0; i < tasks.Length; i++)
             {
-                tasks[i] = WithdrawMoneyAsync(new Random().Next(1000, 10000), new Random().Next(1000, 5000));
-                
+                customerId = new Random().Next(1000, 10000);
+                amount = new Random().Next(1000, 5000);
+                tasks[i] = WithdrawMoneyAsync(customerId, amount);
+                Task receiptTask= tasks[i].ContinueWith(t =>
+                {
+                    decimal balance = t.Result;
+                    GenerateReceipt(customerId, 1000, balance);
+                });
+                Task historyTask = tasks[i].ContinueWith(t =>
+                {
+                    decimal balance = t.Result;
+                    UpdateHistory(customerId, 1000, balance);
+                });
             }
 
             decimal[] balances = await Task.WhenAll(tasks);
@@ -41,6 +54,17 @@ namespace ThreadDemo.Models
                 return balance;
             }
 
+        }
+
+        public static void GenerateReceipt(long customerId,decimal amount, decimal balance)
+        {
+            Console.WriteLine($"Receipt for Customer {customerId} withdrawn {amount}" +
+                $" and having balance{balance}");
+        }
+        public static void UpdateHistory(long customerId, decimal amount, decimal balance)
+        {
+            Console.WriteLine($"Updating Transaction History for Customer {customerId} withdrawn {amount}" +
+                $" and having balance{balance}");
         }
     }
 }
