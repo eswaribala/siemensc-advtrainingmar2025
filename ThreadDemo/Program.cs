@@ -19,4 +19,6 @@ using ThreadDemo.Models;
 
 //LocalStateDemo.Run();
 
-ManualResetEventDemo.ControlDoor();
+//ManualResetEventDemo.ControlDoor();
+//ThreadPoolDemo.Entry();
+new TaskDemo().Entry().Wait();
