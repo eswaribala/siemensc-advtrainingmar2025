@@ -1,5 +1,53 @@
 [
   {
+    "ContainingType": "CustomerAPI.Controllers.AuthenticationController",
+    "Method": "Login",
+    "RelativePath": "api/v1.1/Authentication/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CustomerAPI.Auth.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CustomerAPI.Controllers.AuthenticationController",
+    "Method": "Register",
+    "RelativePath": "api/v1.1/Authentication/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CustomerAPI.Auth.RegisterModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CustomerAPI.Controllers.AuthenticationController",
+    "Method": "RegisterAdmin",
+    "RelativePath": "api/v1.1/Authentication/register-admin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CustomerAPI.Auth.RegisterModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CustomerAPI.Controllers.GenericController\u00601[[CustomerAPI.Models.Customer, CustomerAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
     "Method": "GetAll",
     "RelativePath": "api/v1.1/Customer",
@@ -158,6 +206,54 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CustomerAPI.Controllers.AuthenticationController",
+    "Method": "Login",
+    "RelativePath": "api/v1/Authentication/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CustomerAPI.Auth.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CustomerAPI.Controllers.AuthenticationController",
+    "Method": "Register",
+    "RelativePath": "api/v1/Authentication/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CustomerAPI.Auth.RegisterModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CustomerAPI.Controllers.AuthenticationController",
+    "Method": "RegisterAdmin",
+    "RelativePath": "api/v1/Authentication/register-admin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CustomerAPI.Auth.RegisterModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CustomerAPI.Controllers.GenericController\u00601[[CustomerAPI.Models.Customer, CustomerAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
     "Method": "GetAll",
     "RelativePath": "api/v1/Customer",
@@ -310,6 +406,54 @@
       {
         "Name": "Key",
         "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CustomerAPI.Controllers.AuthenticationController",
+    "Method": "Login",
+    "RelativePath": "api/v2/Authentication/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CustomerAPI.Auth.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CustomerAPI.Controllers.AuthenticationController",
+    "Method": "Register",
+    "RelativePath": "api/v2/Authentication/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CustomerAPI.Auth.RegisterModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CustomerAPI.Controllers.AuthenticationController",
+    "Method": "RegisterAdmin",
+    "RelativePath": "api/v2/Authentication/register-admin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CustomerAPI.Auth.RegisterModel",
         "IsRequired": true
       }
     ],

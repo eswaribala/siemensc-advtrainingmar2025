@@ -5,13 +5,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
-
+var SecretData = configuration["JWT:Secret"];
 //DbConfiguration
 builder.Services.AddDbContext<CustomerContext>(o =>
 o.UseSqlServer(configuration.GetConnectionString("CustomerDBConn")));
+builder.Services.AddDbContext<CustomerIdentityContext>(o =>
+o.UseSqlServer(configuration.GetConnectionString("CustomerIdentityConn")));
 
 //register repository
 builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
@@ -21,9 +27,39 @@ builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericReposi
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<CustomerIdentityContext>()
+    .AddDefaultTokenProviders();
+
+
 builder.Services.AddSwaggerGen(opt =>
 {
     opt.SwaggerDoc("v1", new OpenApiInfo { Title = "CustomerAPI", Version = "v1" });
+     opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+     {
+         In = ParameterLocation.Header,
+         Description = "Please enter token",
+         Name = "Authorization",
+         Type = SecuritySchemeType.Http,
+         BearerFormat = "JWT",
+         Scheme = "bearer"
+     });
+
+    opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
+        }
+    });
 });
 builder.Services.AddApiVersioning(opt =>
 {
@@ -58,6 +94,29 @@ builder.Services.AddCors(options =>
                       });
 });
 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+// Add services to the container.
+
+// Adding Jwt Bearer
+.AddJwtBearer(options =>
+{
+    options.SaveToken = true;
+    options.RequireHttpsMetadata = false;
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidAudience = configuration["JWT:ValidAudience"],
+        ValidIssuer = configuration["JWT:ValidIssuer"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretData))
+    };
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -80,7 +139,7 @@ if (app.Environment.IsDevelopment())
 //app.UseHttpsRedirection();
 app.UseCors(policyName);
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

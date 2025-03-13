@@ -1,4 +1,5 @@
 ﻿using CustomerAPI.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +22,7 @@ namespace CustomerAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> GetAll()
         {
             var items = await _repository.GetAllValues();
@@ -28,6 +30,7 @@ namespace CustomerAPI.Controllers
         }
 
         [HttpGet("{Key}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetById(long Key)
         {
             var item = await _repository.GetEntityById(Key);
